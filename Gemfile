@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.4'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7'
@@ -20,17 +20,30 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1', '>= 3.1.18'
+#bootstrap sass
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+
+# javascript gem
 gem 'jquery-rails'
+
+#install faker to generate fake data
+gem 'faker', '~> 2.23'
+
+#controls contacts per page
+gem 'bootstrap-will_paginate', '~> 1.0'
+
+#Easy upload management for ActiveRecord
+gem 'paperclip', '~> 6.1'
+
+gem 'net-smtp', require: false
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-#Bootstrap SAAS
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
-gem 'bootstrap-will_paginate', '~> 1.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-
-gem 'faker', '~> 2.23'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

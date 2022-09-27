@@ -7,7 +7,7 @@ before_action :find_contact, only: [:edit, :update, :destroy]
   def new
    @contact = Contact.new
   end
-  def create 
+  def create
   @contact = Contact.new(contact_params)
   if @contact.save
     flash[:success] = "Successfully created new contact"
@@ -17,11 +17,11 @@ before_action :find_contact, only: [:edit, :update, :destroy]
   end
   end
 
-  def edit 
+  def edit
   end
 
-  def update 
-    
+  def update
+
     if @contact.update(contact_params)
       flash[:success] = "Successfully Update contact"
       redirect_to contacts_path
@@ -31,7 +31,7 @@ before_action :find_contact, only: [:edit, :update, :destroy]
   end
 
   def destroy
-   
+
     if @contact.destroy
       flash[:success] = "Successfully Deleted contact"
       redirect_to contacts_path
@@ -44,6 +44,6 @@ before_action :find_contact, only: [:edit, :update, :destroy]
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :company, :address ,:phone ,:dob) 
+    params.require(:contact).permit(:name, :email, :company, :address ,:phone ,:dob ,:image)
   end
 end
