@@ -1,8 +1,26 @@
- <h1>Welcome to the Contact-Book</h1>
-<% if Current.user %>
+ <html>
+<body>
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://media.istockphoto.com/photos/phone-book-picture-id891806246?k=20&m=891806246&s=612x612&w=0&h=zDqjXXGey0OnGcDyChjLxHNxjqIurXWP_6S0OM48zZY=" width="800"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form>
+         <% if Current.user %>
    <b> Logged in as: </b><%= Current.user.email %><br>
     <%= link_to 'Edit Password', edit_password_path %>
     <%= button_to 'Logout', logout_path, method: :delete %>
     <% else %>
-    
+
   <% end %>
+  <div id="grad1"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
