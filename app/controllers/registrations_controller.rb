@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
     if @user.save
     # stores saved user id in a session
       session[:user_id] = @user.id
-      redirect_to root_path, notice: 'Successfully created account'
+      redirect_to contacts_path, notice: 'Successfully created account'
     else
       render :new
     end

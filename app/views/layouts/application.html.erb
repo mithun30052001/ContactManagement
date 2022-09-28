@@ -16,31 +16,29 @@
         <a class="navbar-brand text-uppercase" href="/contacts">
            MY CONTACTS
         </a>
-         <div class="container-fluid pull-right"><%= button_to 'Logout', logout_path, method: :delete %></div>
-        <div class="container-fluid pull-right"><a href="/contacts/new" class="btn btn-danger">Add New</a></div>
-
-
+         <% if Current.user %>
+           <div class="container-fluid pull-right"><%= button_to 'Logout', logout_path, method: :delete %></div>
+           <div class="container-fluid pull-right"><a href="/contacts/new" class="btn btn-danger">Add New</a></div>
+        <% else %>
+              <div class="container-fluid pull-right"><%= button_to 'Sign Up', sign_up_path %></div>
+             <div class="container-fluid pull-right">  <%= button_to 'Login', sign_in_path %><div>
+        <% end %>
       </div>
-
     </nav>
     <!-- content -->
     <main class="pt-5">
       <div class="container">
         <div class="row">
-
           <div class="col-md-9">
-
           <% flash.each do |type, message| %>
             <%= content_tag :div, class: "alert alert-#{type} alert-dismissible", role: "alert" do %>
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <%= message %>
             <% end %>
           <% end %>
-
                <%= yield %>
           </div>
         </div>
       </div>
   </body>
 </html>
-
