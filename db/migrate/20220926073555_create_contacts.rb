@@ -12,3 +12,6 @@ class CreateContacts < ActiveRecord::Migration[6.1]
     end
   end
 end
+
+
+#rails g migration changes_to_contacts
