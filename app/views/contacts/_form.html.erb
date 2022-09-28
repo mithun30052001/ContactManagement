@@ -71,6 +71,7 @@
                   <option value="3">Other</option>
                 </select>
               </div>
+
               <div class="col-md-3">
                 <a href="#" id="add-group-btn" class="btn btn-default btn-block">Add Group</a>
               </div>
@@ -88,16 +89,24 @@
               </div>
             </div>
           </div>
+
+          <div class="form-group">
+              <%= f.label :image, class: "control-label col-md-3" %>
+              <div class="col-md-8">
+                <%= f.file_field :image, class: "form-control" %>
+              </div>
+          </div>
+
           <div class="col-md-4">
             <div class="fileinput fileinput-new" data-provides="fileinput">
-              <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;">
-                <img src="http://placehold.it/150x150" alt="Photo">
-                <%# new %>
-                <%# <%= link_to image_tag(@contact.image, style:"width:100%"), contacts_path%> %>
-              </div>
+              <%# <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;">
+
+                 <%= link_to image_tag(@contact.image, style:"height:100%"), contacts_path%>
+              <%# </div>  %>
               <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
               <div class="text-center">
-                <span class="btn btn-default btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                <%# <span class="btn btn-default btn-file"><span class="fileinput-new">Choose Photo</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span> %>
+
                 <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
               </div>
             </div>

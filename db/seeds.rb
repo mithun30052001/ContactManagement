@@ -10,7 +10,7 @@ Contact.destroy_all
 contacts = []
 
 # generate 20 fake data
-20.times do |i|
+30.times do |i|
 	new_contact = {
 		id: i,
 		name: Faker::Name.name,
@@ -20,6 +20,7 @@ contacts = []
 		phone: Faker::PhoneNumber.cell_phone,
     dob: Faker::Date.birthday(min_age: 18, max_age: 65)
   }
+		# puts new_contact[:name]
   	contacts.push(new_contact)
 end
 

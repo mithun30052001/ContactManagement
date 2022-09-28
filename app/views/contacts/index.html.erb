@@ -8,7 +8,18 @@
           <div class="media">
             <div class="media-left">
               <a href="#">
-                <img class="media-object" src="http://placehold.it/100x100" alt="...">
+                 <img class="media-object" src="http://placehold.it/100x100" alt="...">
+
+                 <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;">
+
+                 <% if contact.image.attached? %>
+                      <%= link_to image_tag(contact.image, style:"height:100%"), contacts_path%>
+                 <% else %>
+                    <img class="image" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+                 <% end %>
+              </div>
+
+                  <%# <img class="image" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"> %>
               </a>
             </div>
             <div class="media-body">
@@ -27,14 +38,14 @@
             <% end %>
             <%= link_to contact_path(contact), :method => :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure ?" } do %>
               <i class="glyphicon glyphicon-remove"></i>
-            <% end %>            
+            <% end %>
           </div>
         </td>
       </tr>
 
     <% end %>
-      
-    </table>            
+
+    </table>
   </div>
 
   <div class="text-center">

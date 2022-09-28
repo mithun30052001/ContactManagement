@@ -83,3 +83,28 @@ body {
 ul.pagination {
 	margin-bottom: 0;
 }
+
+// .image{
+//     width: 1px;
+//     height: 1px;
+//     align-items: center;
+//     border-radius: 50%;
+//     border: 2px solid #CDDC39;
+// }
+
+
+.image{
+	align-items: center;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    display: block;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+}
+
+
+
+
+
