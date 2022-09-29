@@ -10,9 +10,9 @@
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
         <form>
          <% if Current.user %>
-   <b> Logged in as: </b><%= Current.user.email %><br>
-    <%= link_to 'Edit Password', edit_password_path %>
-    <%= button_to 'Logout', logout_path, method: :delete %>
+          <b> Logged in as: </b><%= Current.user.email %><br>
+          <%= link_to 'Edit Password', edit_password_path %>
+          <%= button_to 'Logout', logout_path, method: :delete %>
     <% else %>
 
   <% end %>

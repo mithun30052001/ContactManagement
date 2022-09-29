@@ -17,12 +17,20 @@
            MY CONTACTS
         </a>
          <% if Current.user %>
+           <%# <form class="d=flex" method="GET" action="/search">
+            <input type = "search-name" class = "contact-search" placeholder = "Search" name = "query" aria-label="Search" method="GET">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> %>
            <div class="container-fluid pull-right"><%= button_to 'Logout', logout_path, method: :delete %></div>
            <div class="container-fluid pull-right"><a href="/contacts/new" class="btn btn-danger">Add New</a></div>
         <% else %>
               <div class="container-fluid pull-right"><%= button_to 'Sign Up', sign_up_path %></div>
              <div class="container-fluid pull-right">  <%= button_to 'Login', sign_in_path %><div>
         <% end %>
+
+        <%# new %>
+
+
       </div>
     </nav>
     <!-- content -->
@@ -42,3 +50,6 @@
       </div>
   </body>
 </html>
+
+
+<%# <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" method="GET"> %>

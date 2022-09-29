@@ -32,12 +32,19 @@ before_action :find_contact, only: [:edit, :update, :destroy]
     end
   end
 
-  def destroy
+def show
+    @contact = Contact.find(params[:id])
     if @contact.destroy
       flash[:success] = "Successfully Deleted contact"
       redirect_to contacts_path
     end
-  end
+end
+
+  # def search
+  #   @query = params[:query]
+  #   @contact = Contact.where("contacts.name LIKE ?",["%#(query)%"])
+  #   render "index"
+  # end
 
   def find_contact
     @contact = Contact.find(params[:id])
